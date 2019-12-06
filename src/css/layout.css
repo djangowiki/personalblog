@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Solway&display=swap');
+
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+  box-sizing: border-box;
+  color: var(--dark);
+  font-family: 'Solway', serif;
+}
+
+body {
+  line-height: 1.2rem;
+  background: var(--light);
+  margin: 30px 50px;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+}
+
+footer {
+  padding: 1.3rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  margin-top: 2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Solway', serif;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  text-decoration: none;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  margin: 0.6rem 1.3rem;
+}
+
+.site-wrapper {
+  display: grid;
+  gap: 30px;
+}
+
+/* Site Navigation */
+.menu ul {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  grid-template-columns: repeat(6, 1fr);
+  font-family: 'Solway', serif;
+}
+
+.menu ul > li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: var(--dark);
+  text-align: center;
+  display: block;
+  padding: 0.8rem;
+  text-transform: lowercase;
+}
+
+.menu ul > li a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+/* Hero Section */
+.hero header {
+  background: var(--primary);
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero header > h2 {
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.hero header > p {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: var(--dark);
+}
+
+/* Top Content Area */
+.content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  background: var(--primary);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.date {
+  padding: 0.2rem;
+}
+
+.works {
+  background: var(--primary);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+/* Stacks */
+.stacks {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stack {
+  background: var(--primary);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.note {
+  background: var(--primary);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+/* Info */
+.info {
+  display: grid;
+  gap: 20px;
+  background: var(--primary);
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Notes */
+.article {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 'blog-content blog-content blog-content sidebar';
+}
+
+.blog-content {
+  grid-area: blog-content;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.link a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .menu > ul {
+    grid-template-columns: 1fr;
+  }
+  .hero header > h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+  .hero header > p {
+    margin-top: 0;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .stacks {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .article {
+    grid-template-areas:
+      'blog-content'
+      'sidebar';
+  }
+}
+
+@media (max-width: 768px) {
+  .menu > ul {
+    grid-template-columns: 1fr;
+  }
+  .hero header > h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+  .hero header > p {
+    margin-top: 0;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .stacks {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .article {
+    grid-template-areas:
+      'blog-content'
+      'sidebar';
+  }
+}
