@@ -25,7 +25,7 @@ const Me = () => {
       <section className="info">
         <Img fluid={img} />
         <div>
-          <h2>I'm Ikenna Gabriel Ikenna</h2>
+          <h2>I'm Ikenna Gabriel Ifenna</h2>
           <p>
             I develop modern websites and I play well in a team. I am very
             passionate about learning new technologies and writing about my
