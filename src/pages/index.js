@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import NoteList from '../components/Content/NoteList';
 import Me from '../components/Home/Me';
 import PostsButton from '../components/Home/PostsButton';
+import SEO from '../components/Global/SEO';
 
 const getPosts = graphql`
   {
@@ -38,6 +39,7 @@ export default () => {
   const notes = response.allMdx.edges;
   return (
     <Layout>
+      <SEO title="Home" description="Let's become fullstack together" />
       <Hero />
       <Stacks />
       <NoteList notes={notes} />

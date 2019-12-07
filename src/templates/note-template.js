@@ -3,15 +3,18 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import Layout from '../components/Global/Layout';
+import SEO from '../components/Global/SEO';
 
 const noteTemplate = ({ data }) => {
   const { title, date, author, image } = data.mdx.frontmatter;
   const { body } = data.mdx;
+  const { excerpt } = data.mdx;
   const img = image.childImageSharp.fluid;
 
   return (
     <Fragment>
       <Layout>
+        <SEO title={title} description={excerpt} />
         <div className="article">
           <section className="blogContent note">
             <div>
@@ -23,14 +26,6 @@ const noteTemplate = ({ data }) => {
             </div>
             <MDXRenderer>{body}</MDXRenderer>
           </section>
-          <aside className="sidebar">
-            <div className="sidebarContent">
-              <h4 className="title">Latest Updates</h4>
-              <ul>
-                <li>Do I need NodeJs for Gatsby</li>
-              </ul>
-            </div>
-          </aside>
         </div>
       </Layout>
     </Fragment>
@@ -53,6 +48,7 @@ export const query = graphql`
           }
         }
       }
+      excerpt
       body
     }
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Global/Layout';
 import NoteList from '../components/Content/NoteList';
 import { graphql, useStaticQuery } from 'gatsby';
+import SEO from '../components/Global/SEO';
 
 const getPosts = graphql`
   {
@@ -34,6 +35,7 @@ export default () => {
   const notes = response.allMdx.edges;
   return (
     <Layout>
+      <SEO title="Notes" description="Let's become fullstack together" />
       <NoteList notes={notes} />
     </Layout>
   );
