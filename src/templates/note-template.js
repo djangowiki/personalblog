@@ -43,7 +43,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        date(formatString: "MMMM Do, YYYYY")
+        date(formatString: "MMMM Do, YYYY")
         author
         image {
           childImageSharp {

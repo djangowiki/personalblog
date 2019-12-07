@@ -5,10 +5,11 @@ import Stacks from '../components/Home/Stacks';
 import { graphql, useStaticQuery } from 'gatsby';
 import NoteList from '../components/Content/NoteList';
 import Me from '../components/Home/Me';
+import PostsButton from '../components/Home/PostsButton';
 
 const getPosts = graphql`
   {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(limit: 4, sort: { fields: frontmatter___date, order: DESC }) {
       totalCount
       edges {
         node {
@@ -40,6 +41,7 @@ export default () => {
       <Hero />
       <Stacks />
       <NoteList notes={notes} />
+      <PostsButton />
       <Me />
     </Layout>
   );
