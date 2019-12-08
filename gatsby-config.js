@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Django Wiki',
@@ -42,6 +43,25 @@ module.exports = {
             resolve: 'gatsby-remark-images',
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-remark-vscode`,
+      options: {
+        colorTheme: {
+          defaultTheme: 'Monokai Dimmed',
+          prefersDarkTheme: 'Monokai Dimmed',
+          prefersLightTheme: 'Quiet Light',
+        },
+        wrapperClassName: '',
+        injectStyles: true,
+        extensions: [],
+        extensionDataDirectory: path.resolve('extensions'),
+        languageAliases: {},
+        replaceColor: x => x,
+        getLineClassName: ({ content, index, language, codeFenceOptions }) =>
+          '',
+        logLevel: 'error',
       },
     },
   ],
